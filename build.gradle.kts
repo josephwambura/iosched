@@ -39,7 +39,7 @@ buildscript {
 }
 
 plugins {
-    id("com.diffplug.gradle.spotless") version "3.27.1"
+    id("com.diffplug.spotless") version "6.4.2"
 }
 
 allprojects {
@@ -65,8 +65,8 @@ allprojects {
 }
 
 subprojects {
-    apply(plugin = "com.diffplug.gradle.spotless")
-    val ktlintVer = "0.40.0"
+    apply(plugin = "com.diffplug.spotless")
+    val ktlintVer = "0.44.0"
     spotless {
         kotlin {
             target("**/*.kt")

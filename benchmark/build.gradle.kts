@@ -22,7 +22,7 @@ plugins {
 }
 
 android {
-    compileSdk = Versions.COMPILE_SDK
+    compileSdkPreview = Versions.COMPILE_PREVIEW_SDK
     defaultConfig {
         minSdk = Versions.MIN_SDK
         targetSdk = Versions.TARGET_SDK
@@ -50,7 +50,7 @@ android {
     // To avoid the compile error from benchmarkRule.measureRepeated
     // Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM
     // target 1.6
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
 }
 
 dependencies {

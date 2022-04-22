@@ -20,7 +20,7 @@ plugins {
 }
 
 android {
-    compileSdk = Versions.COMPILE_SDK
+    compileSdkPreview = Versions.COMPILE_PREVIEW_SDK
     defaultConfig {
         minSdk = Versions.MIN_SDK
         targetSdk = Versions.TARGET_SDK
