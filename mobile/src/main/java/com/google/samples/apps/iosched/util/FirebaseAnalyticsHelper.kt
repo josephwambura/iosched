@@ -34,6 +34,7 @@ import com.google.samples.apps.iosched.shared.data.prefs.PreferenceStorage
 import com.google.samples.apps.iosched.shared.di.ApplicationScope
 import com.google.samples.apps.iosched.ui.signin.SignInViewModelDelegate
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flattenMerge
@@ -123,6 +124,7 @@ class FirebaseAnalyticsHelper(
     /**
      * Set up a listener for preference changes.
      */
+    @OptIn(FlowPreview::class)
     private suspend fun logSendUsageStatsFlagChanges() {
         // not logged: showScheduleUiHints, selectedFilters, selectedTheme
         flowOf(

@@ -24,12 +24,12 @@ plugins {
 }
 
 android {
-    namespace 'com.google.samples.apps.iosched'
-    compileSdkVersion(Versions.COMPILE_SDK)
+    namespace = "com.google.samples.apps.iosched"
+    compileSdkPreview = Versions.COMPILE_PREVIEW_SDK
     defaultConfig {
         applicationId = "com.google.samples.apps.iosched"
-        minSdkVersion(Versions.MIN_SDK)
-        targetSdkVersion(Versions.TARGET_SDK)
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
         versionCode = Versions.versionCodeMobile
         versionName = Versions.versionName
         testInstrumentationRunner = "com.google.samples.apps.iosched.tests.CustomTestRunner"
@@ -149,13 +149,13 @@ android {
 
     testBuildType = "staging"
 
-    // Required for AR because it includes a library built with Java 8
+    // Required for AR because it includes a library built with Java 11
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    // To avoid the compile error: "Cannot inline bytecode built with JVM target 1.8
-    // into bytecode that is being built with JVM target 1.6"
+    // To avoid the compile error: "Cannot inline bytecode built with JVM target 11
+    // into bytecode that is being built with JVM target 11"
     kotlinOptions {
         val options = this as org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
         options.jvmTarget = JavaVersion.VERSION_11.toString()
@@ -218,12 +218,15 @@ dependencies {
     implementation(Libs.ACTIVITY_COMPOSE)
     implementation(Libs.COMPOSE_ANIMATION)
     implementation(Libs.COMPOSE_MATERIAL)
+    implementation(Libs.COMPOSE_UI)
+    implementation(Libs.COMPOSE_PREVIEW)
     implementation(Libs.COMPOSE_RUNTIME)
     implementation(Libs.COMPOSE_THEME_ADAPTER)
-    implementation(Libs.COMPOSE_TOOLING)
+    debugImplementation(Libs.COMPOSE_TOOLING)
     implementation(Libs.VIEWMODEL_COMPOSE)
     implementation(Libs.MDC_COMPOSE_THEME_ADAPTER)
     androidTestImplementation(Libs.COMPOSE_TEST)
+    debugImplementation(Libs.COMPOSE_MANIFEST)
 
     // Dagger Hilt
     implementation(Libs.HILT_ANDROID)

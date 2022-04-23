@@ -62,7 +62,7 @@ fun getDrawableResourceForIcon(context: Context, iconType: String?): Int {
         return 0
     }
     return context.resources.getIdentifier(
-        iconType.toLowerCase(Locale.US),
+        iconType.lowercase(Locale.US),
         "drawable",
         context.packageName
     )

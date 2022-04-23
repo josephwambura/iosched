@@ -102,10 +102,10 @@ class CountdownView @JvmOverloads constructor(
             this,
             object : AccessibilityDelegateCompat() {
                 override fun dispatchPopulateAccessibilityEvent(
-                    host: View?,
-                    event: AccessibilityEvent?
+                    host: View,
+                    event: AccessibilityEvent
                 ): Boolean {
-                    return if (event != null) {
+                    return run {
                         val countdown = Countdown.until(conferenceStart)
                         if (countdown != null) {
                             val res = context.resources
@@ -131,8 +131,6 @@ class CountdownView @JvmOverloads constructor(
                             )
                         }
                         true
-                    } else {
-                        super.dispatchPopulateAccessibilityEvent(host, event)
                     }
                 }
             }

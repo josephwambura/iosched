@@ -15,9 +15,9 @@
  */
 
 object Versions {
-    val versionName = "7.0.15" // X.Y.Z; X = Major, Y = minor, Z = Patch level
-    private val versionCodeBase = 70150 // XYYZZM; M = Module (tv, mobile)
-    val versionCodeMobile = versionCodeBase + 3
+    const val versionName = "1.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
+    private const val versionCodeBase = 10010 // XYYZZM; M = Module (tv, mobile)
+    const val versionCodeMobile = versionCodeBase + 1
 
     const val COMPILE_SDK = 32
     const val COMPILE_PREVIEW_SDK = "Tiramisu"

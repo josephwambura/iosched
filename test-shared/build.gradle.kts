@@ -33,3 +33,8 @@ dependencies {
     testImplementation(Libs.THREETENBP)
     compileOnly("org.threeten:threetenbp:${Versions.THREETENBP}:no-tzdb")
 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}

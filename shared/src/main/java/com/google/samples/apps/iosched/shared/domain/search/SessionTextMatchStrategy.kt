@@ -19,6 +19,7 @@ package com.google.samples.apps.iosched.shared.domain.search
 import androidx.core.os.trace
 import com.google.samples.apps.iosched.model.userdata.UserSession
 import com.google.samples.apps.iosched.shared.data.db.AppDatabase
+import java.util.*
 import javax.inject.Inject
 
 interface SessionTextMatchStrategy {
@@ -36,10 +37,10 @@ object SimpleMatchStrategy : SessionTextMatchStrategy {
             if (query.isEmpty()) {
                 return userSessions
             }
-            val lowercaseQuery = query.toLowerCase()
+            val lowercaseQuery = query.lowercase(Locale.getDefault())
             return userSessions.filter {
-                it.session.title.toLowerCase().contains(lowercaseQuery) ||
-                    it.session.description.toLowerCase().contains(lowercaseQuery)
+                it.session.title.lowercase(Locale.getDefault()).contains(lowercaseQuery) ||
+                    it.session.description.lowercase(Locale.getDefault()).contains(lowercaseQuery)
             }
         }
     }

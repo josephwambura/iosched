@@ -45,6 +45,7 @@ import org.threeten.bp.ZoneId
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import timber.log.Timber
+import java.util.*
 
 /**
  * A [RecyclerView.ItemDecoration] which draws sticky headers for a given list of sessions.
@@ -208,7 +209,7 @@ class ScheduleTimeHeadersDecoration(
             }
             append(System.lineSeparator())
             inSpans(meridiemTextSizeSpan, boldSpan) {
-                append(meridiemFormatter.format(startTime).toUpperCase())
+                append(meridiemFormatter.format(startTime).uppercase(Locale.getDefault()))
             }
         }
         return newStaticLayout(text, paint, width, ALIGN_CENTER, 1f, 0f, false)

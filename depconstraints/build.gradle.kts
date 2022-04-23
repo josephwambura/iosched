@@ -19,58 +19,60 @@ plugins {
     id("maven-publish")
 }
 
-val appcompat = "1.1.0"
-val activity = "1.2.0-rc01"
-val activityCompose = "1.3.0-alpha03"
-val appStartup = "1.1.0-beta01"
-val cardview = "1.0.0"
-val archTesting = "2.0.0"
-val arcore = "1.7.0"
-val benchmark = "1.0.0"
-val benchmarkMacro = "1.1.0-alpha02"
-val browser = "1.0.0"
+val appcompat = "1.6.0-alpha01"
+val activity = "1.6.0-alpha01"
+val activityCompose = "1.6.0-alpha01"
+val appStartup = "1.2.0-alpha01"
+val cardView = "1.0.0"
+val archTesting = "2.1.0"
+val arcore = "1.30.0"
+val benchmark = "1.1.0-rc01"
+val benchmarkMacro = "1.1.0-rc01"
+val browser = "1.4.0"
 val compose = Versions.COMPOSE
-val constraintLayout = "1.1.3"
+val composeMaterial = "1.0.0-alpha10"
+val composeThemeAdapter = "1.0.7"
+val constraintLayout = "2.1.3"
 val core = "1.3.2"
 val coroutines = "1.6.0"
 val coroutinesTest = "1.6.0"
 val crashlytics = "17.2.2"
-val dataStore = "1.0.0-beta01"
-val drawerLayout = "1.1.0-rc01"
-val espresso = "3.1.1"
-val firebaseAnalytics = "17.4.0"
-val firebaseAuth = "19.3.1"
-val firebaseConfig = "19.1.4"
-val firebaseFirestore = "21.4.3"
-val firebaseFunctions = "19.0.2"
-val firebaseMessaging = "20.1.6"
-val firebaseUi = "4.0.0"
+val dataStore = "1.0.0"
+val drawerLayout = "1.1.1"
+val espresso = "3.5.0-alpha05"
+val firebaseAnalytics = "20.1.2"
+val firebaseAuth = "21.0.3"
+val firebaseConfig = "21.0.2"
+val firebaseFirestore = "24.1.1"
+val firebaseFunctions = "20.0.2"
+val firebaseMessaging = "23.0.3"
+val firebaseUi = "8.0.0"
 val flexbox = "1.1.0"
-val fragment = "1.3.0"
-val glide = "4.9.0"
+val fragment = "1.5.0-beta01"
+val glide = "4.13.1"
 val googlePlayServicesMapsKtx = "3.0.0"
-val googlePlayServicesVision = "17.0.2"
-val gson = "2.8.6"
-val hamcrest = "1.3"
+val googlePlayServicesVision = "20.1.3"
+val gson = "2.9.0"
+val hamcrest = "2.2"
 val hilt = Versions.HILT_AGP
-val junit = "4.13"
-val junitExt = "1.1.1"
-val lifecycle = "2.4.0-alpha01"
-val lottie = "3.0.0"
-val material = "1.4.0-beta01"
-val mockito = "3.3.1"
+val junit = "4.13.2"
+val junitExt = "1.1.4-alpha05"
+val lifecycle = "2.5.0-beta01"
+val lottie = "5.0.3"
+val material = "1.7.0-alpha01"
+val mockito = "3.4.6"
 val mockitoKotlin = "1.5.0"
-val okhttp = "3.10.0"
-val okio = "1.14.0"
+val okhttp = "5.0.0-alpha.6"
+val okio = "3.0.0-alpha.2"
 val pageIndicator = "1.3.0"
 val playCore = "1.6.5"
-val room = "2.4.2"
-val rules = "1.1.1"
-val runner = "1.2.0"
-val slidingpanelayout = "1.2.0-alpha01"
-val threetenabp = "1.0.5"
+val room = "2.5.0-alpha01"
+val rules = "1.4.1-alpha05"
+val runner = "1.5.0-alpha02"
+val slidingPanelLayout = "1.2.0"
+val threeTenAbp = "1.0.5"
 val timber = "4.7.1"
-val viewpager2 = "1.0.0"
+val viewpager2 = "1.1.0-beta01"
 val viewModelCompose = "1.0.0-alpha02"
 val uiAutomator = "2.2.0"
 
@@ -80,18 +82,21 @@ dependencies {
         api("${Libs.ACTIVITY_KTX}:$activity")
         api("${Libs.APPCOMPAT}:$appcompat")
         api("${Libs.APP_STARTUP}:$appStartup")
-        api("${Libs.CARDVIEW}:$cardview")
+        api("${Libs.CARDVIEW}:$cardView")
         api("${Libs.ARCH_TESTING}:$archTesting")
         api("${Libs.ARCORE}:$arcore")
         api("${Libs.BENCHMARK}:$benchmark")
         api("${Libs.BENCHMARK_MACRO}:$benchmarkMacro")
         api("${Libs.BROWSER}:$browser")
+        api("${Libs.COMPOSE_MATERIAL}:$composeMaterial")
         api("${Libs.COMPOSE_ANIMATION}:$compose")
-        api("${Libs.COMPOSE_MATERIAL}:$compose")
+        api("${Libs.COMPOSE_UI}:$compose")
+        api("${Libs.COMPOSE_PREVIEW}:$compose")
         api("${Libs.COMPOSE_RUNTIME}:$compose")
         api("${Libs.COMPOSE_TEST}:$compose")
-        api("${Libs.COMPOSE_THEME_ADAPTER}:$compose")
+        api("${Libs.COMPOSE_MANIFEST}:$compose")
         api("${Libs.COMPOSE_TOOLING}:$compose")
+        api("${Libs.COMPOSE_THEME_ADAPTER}:$composeThemeAdapter")
         api("${Libs.CONSTRAINT_LAYOUT}:$constraintLayout")
         api("${Libs.CORE_KTX}:$core")
         api("${Libs.COROUTINES}:$coroutines")
@@ -130,7 +135,7 @@ dependencies {
         api("${Libs.LIFECYCLE_VIEW_MODEL_KTX}:$lifecycle")
         api("${Libs.LOTTIE}:$lottie")
         api("${Libs.MATERIAL}:$material")
-        api("${Libs.MDC_COMPOSE_THEME_ADAPTER}:$compose")
+        api("${Libs.MDC_COMPOSE_THEME_ADAPTER}:$composeThemeAdapter")
         api("${Libs.MOCKITO_CORE}:$mockito")
         api("${Libs.MOCKITO_KOTLIN}:$mockitoKotlin")
         api("${Libs.NAVIGATION_FRAGMENT_KTX}:${Versions.NAVIGATION}")
@@ -144,8 +149,8 @@ dependencies {
         api("${Libs.INK_PAGE_INDICATOR}:$pageIndicator")
         api("${Libs.RULES}:$rules")
         api("${Libs.RUNNER}:$runner")
-        api("${Libs.SLIDING_PANE_LAYOUT}:$slidingpanelayout")
-        api("${Libs.THREETENABP}:$threetenabp")
+        api("${Libs.SLIDING_PANE_LAYOUT}:$slidingPanelLayout")
+        api("${Libs.THREETENABP}:$threeTenAbp")
         api("${Libs.THREETENBP}:${Versions.THREETENBP}")
         api("${Libs.TIMBER}:$timber")
         api("${Libs.VIEWPAGER2}:$viewpager2")
